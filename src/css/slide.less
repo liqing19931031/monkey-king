@@ -1,0 +1,35 @@
+.slide{
+	margin-top: 30px;
+	height: 400px;
+	width: 100%;
+	position: relative;
+	.slide-img{
+		img{
+			position: absolute;
+			transition: all 0.4s ease-in-out;
+			&.on{
+				z-index: 10;
+			}
+		}
+	}
+	.slide-dot{
+		position: absolute;
+		bottom: 10px;
+		left: 520px;
+		z-index: 99999;
+		a{
+			display: inline-block;
+		    width: 20px;
+		    height: 20px;
+		    background: #347fb9;
+		    margin-right: 4px;
+		    border-radius: 9px;
+		    transition: all 0.4s ease-in-out;
+		    overflow: hidden;
+		}
+		.on{
+			width: 60px;
+			background-color: yellow;
+		}
+	}
+}
