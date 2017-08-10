@@ -1,0 +1,14 @@
+宽1200PX高60PX    渐变#75df1f至#63d407  线性渐变  角度0°
+
+
+.矩形_732 {
+  background-image: -moz-linear-gradient( 0deg, rgb(117,223,31) 0%, rgb(99,212,7) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(117,223,31) 0%, rgb(99,212,7) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(117,223,31) 0%, rgb(99,212,7) 100%);
+  position: absolute;
+  left: 359px;
+  top: 1969px;
+  width: 1200px;
+  height: 60px;
+  z-index: 337;
+}

@@ -4,12 +4,12 @@ var path = require('path');
 var base = {
 	// 页面入口文件配置
 	entry: [
-		path.join(__dirname, 'src/main.js')
+		path.join(__dirname, 'src/detail.js')
 	],
 	// 入口文件输出配置
 	output: {
-		path: 'E:/project/midbatch/themes/mall/tmall/styles/default/js',
-		filename: 'app.js'
+		path: path.join(__dirname, 'shopDetail'),
+		filename: 'shopDetail.js'
 	},
 	module: {
 		// 加载器配置
@@ -31,15 +31,15 @@ var base = {
       			test: /\.less$/,
       			loader: 'style-loader!css-loader!less-loader'
       		},
-      		{ 	test: /\.(png|jpg)$/,
-      			loader: 'url-loader?limit=8192'
-      		}
+      		{
+	            test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
+	            loader: 'url?limit=8192&context=client&name=[path][name].[hash:7].[ext]'
+	        }
 		]
 	},
 	eslint: {
 		configFile: '.eslintrc.json'
 	},
-	watch: true, //实时监听不用手动进行编译
 	// 全局引用jquery
 	externals: {
 		jquery: 'window.$'
@@ -49,21 +49,11 @@ var base = {
 		root: [
 			path.join(__dirname + '/src'),
 			path.join(__dirname + '/node_modules'),
-			'E:/project/midbatch/themes/mall/tmall/styles/default/js',
 			path.join(__dirname)
 		],
 		// 这里用来指定模块的后缀,这样你再引入模块的时候就不需要再写后缀名了
-        extensions: ['', '.js', '.less', '.jsx']
-    },
-    devServer: {
-    	contentBase: 'E:/project/midbatch/themes/mall/tmall/styles/default/js',
-	    colors: true,//终端中输出结果为彩色
-	    progress: true,
-	    historyApiFallback: true//不跳转
-	},
-	plugins: [
-	    new webpack.HotModuleReplacementPlugin()
-	]
+        extensions: ['', '.js', '.less']
+    }
 	
 }
 

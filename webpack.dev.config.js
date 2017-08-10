@@ -3,13 +3,13 @@ var webpack = require('webpack');
 var path = require('path');
 var base = {
 	// 页面入口文件配置
-	entry: { 
-		app: path.join(__dirname, 'src/main.js')
+	entry: {
+		index: path.join(__dirname, 'src/shopDetail.js')
 	},
 	// 入口文件输出配置
 	output: {
 		path: __dirname + '/static',
-		filename: '[name].js'
+		filename: 'shopDetail.js'
 	},
 	module: {
 		// 加载器配置
@@ -23,17 +23,17 @@ var base = {
 				text: /\.jsx$/, //判断当文件类型为jsx的时候,进行es6的转义
 				loader: 'babel'
 			},
-			{ 	
+			{
 				test: /\.css$/,
 				loader: 'style-loader!css-loader'
 			},
-      		{ 	
-      			test: /\.less$/,
-      			loader: 'style-loader!css-loader!less-loader'
-      		},
-      		{ 	test: /\.(png|jpg)$/,
-      			loader: 'url-loader?limit=8192'
-      		}
+  		{
+  			test: /\.less$/,
+  			loader: 'style-loader!css-loader!less-loader'
+  		},
+  		{ 	test: /\.(png|jpg)$/,
+  			loader: 'url-loader?limit=8192'
+  		}
 		]
 	},
 	eslint: {
@@ -66,7 +66,7 @@ var base = {
 	plugins: [
 	    new webpack.HotModuleReplacementPlugin()
 	]
-	
+
 }
 
 module.exports = base;
